@@ -1,4 +1,4 @@
-# controlsys_modules
+# Control system FPGA modules
 This project contains some of the FPGA verilog modules I used for my active suspension controller\. 
 Includes following modules
 
