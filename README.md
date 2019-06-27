@@ -41,3 +41,5 @@ Synthesis the design and load it to your FPGA.
 
 You can run tests either using simulations or interfacing the FPGA to a ARM mbed microcontroller through SPI.
 
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
