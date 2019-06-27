@@ -10,6 +10,7 @@
 // Target Devices: Any FPGA, Servoland motor controller current command, 
 // Tool versions: 
 // Description: 
+//      IMPORTANT: please test and edit hall sensor arrangement your own motor before using.
 //	This module is used for Trapizoidal BLDC commutation using current command.
 //  This should be interfaced with movo_interface to communicate with motor driver
 // Dependencies: 
