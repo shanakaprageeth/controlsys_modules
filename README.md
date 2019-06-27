@@ -1,19 +1,18 @@
 # controlsys_modules
-This project contains some of the FPGA verilog modules I used for my active suspension controller. 
+This project contains some of the FPGA verilog modules I used for my active suspension controller\. 
 Includes following modules
 
-- ** BLDC trapizoidal commutation module ** tested for Nippon Pulse S250T Linear Motor. 
-                                            please test and edit hall arrangement before use.
-- ** Movo interface ** To send current commands to Servoland SVF motor controllers
-- ** DAC712 Interface ** Interface for DAC712 digital to analog controller IC
-- ** Encoder interface ** Interface for linear encoder (Rehinshaw LM10)
-- ** Quadrature Encoder interface ** Interface for linear encoder (Rehinshaw LM10)
-- ** Filter Basic Fixed Point ** Simple fixed point filter
-- ** Filter Float ButterWorth ** Second order Butterworth Filter
-- ** PWM out ** pwm output without frequency control for DC motor(use PLL if needed.)
-- ** SPI master ** spi master module used for ADXL345 accelrometer (use PLL if needed.)
-- ** SPI slave ** spi master module used for ARM mbed microcontroller
-- ** UART ** uart communication (use PLL if needed.)
+- **BLDC trapizoidal commutation module** tested for Nippon Pulse S250T Linear Motor\. Please test and edit hall arrangement before use\.
+- **Movo interface**  To send current commands to Servoland SVF motor controllers
+- **DAC712 Interface** Interface for DAC712 digital to analog controller IC
+- **Encoder interface** Interface for linear encoder (Rehinshaw LM10)
+- **Quadrature Encoder interface** Interface for linear encoder (Rehinshaw LM10)
+- **Filter Basic Fixed Point** Simple fixed point filter
+- **Filter Float ButterWorth** Second order Butterworth Filter
+- **PWM out** pwm output without frequency control for DC motor(use PLL if needed.)
+- **SPI master** spi master module used for ADXL345 accelrometer (use PLL if needed.)
+- **SPI slave** spi master module used for ARM mbed microcontroller
+- **UART** uart communication (use PLL if needed.)
 
 ## Getting Started
 
