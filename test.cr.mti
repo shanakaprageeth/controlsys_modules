@@ -1,0 +1,16 @@
+C:/Users/shana_miarfco/OneDrive/Documents/GitHub/controlsys_modules/bldc_commutation.v {1 {vlog -work work -stats=none C:/Users/shana_miarfco/OneDrive/Documents/GitHub/controlsys_modules/bldc_commutation.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module BLDC_commutation
+
+Top level modules:
+	BLDC_commutation
+
+} {} {}} C:/Users/shana_miarfco/OneDrive/Documents/GitHub/controlsys_modules/bldc_commutation_tb.v {2 {vlog -work work -stats=none C:/Users/shana_miarfco/OneDrive/Documents/GitHub/controlsys_modules/bldc_commutation_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bldc_commutation_tb
+** Warning: C:/Users/shana_miarfco/OneDrive/Documents/GitHub/controlsys_modules/bldc_commutation_tb.v(61): (vlog-2638) Bad name or identifier in End of file found where a compiler directive name or macro name was expected.: EOF.
+
+Top level modules:
+	bldc_commutation_tb
+
+} {} {}}
