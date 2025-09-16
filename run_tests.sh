@@ -57,6 +57,9 @@ TESTS=(
     "pwm_out"
     "filter_basic_fixed"
     "uart"
+    "encoder_interface"
+    "dac712_interface"
+    "quadrature_encoder_interface"
 )
 
 echo -e "${BLUE}Available tests:${NC}"
