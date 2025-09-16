@@ -1,0 +1,67 @@
+# Generated test files
+*.vcd
+*.out
+*.log
+tests/waveforms/*.vcd
+tests/waveforms/*.out
+tests/reports/*
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# ModelSim/QuestaSim files
+work/
+*.mpf
+*.cr.mti
+vsim.wlf
+transcript
+
+# Vivado files
+*.jou
+*.str
+*.xpr
+*.cache/
+*.runs/
+*.sim/
+*.ip_user_files/
+*.hw/
+
+# Quartus files
+*.qpf
+*.qsf
+*.qws
+*.pin
+*.summary
+*.done
+*.rpt
+*.smsg
+*.qarlog
+db/
+incremental_db/
+simulation/
+timing/
+testbench/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+dist/
+*.o
+*.exe
