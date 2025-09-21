@@ -1,67 +1,51 @@
-# Generated test files
+
+# Simulation and test artifacts
+test_*
 *.vcd
+*.vvp
 *.out
-*.log
-tests/waveforms/*.vcd
-tests/waveforms/*.out
-tests/reports/*
 
-# Temporary files
-/tmp/
-*.tmp
-*.temp
-
-# ModelSim/QuestaSim files
+# ModelSim/QuestaSim artifacts  
 work/
-*.mpf
-*.cr.mti
-vsim.wlf
+*.wlf
 transcript
+*.cr.mti
 
-# Vivado files
-*.jou
-*.str
-*.xpr
-*.cache/
-*.runs/
-*.sim/
-*.ip_user_files/
-*.hw/
-
-# Quartus files
+# FPGA vendor tool artifacts
 *.qpf
 *.qsf
 *.qws
-*.pin
-*.summary
-*.done
 *.rpt
-*.smsg
-*.qarlog
+*.summary
+*.pin
+*.fit
+*.map
+*.sta
+*.asm
+*.done
+*.jdi
+*.pof
+*.sof
 db/
 incremental_db/
-simulation/
-timing/
-testbench/
+output_files/
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Xilinx artifacts
+*.xpr
+*.bit
+*.bin
+*.mcs
+*.prm
+*.ltx
+vivado*.log
+vivado*.jou
+.Xil/
+project*/
 
-# Editor files
-*.swp
-*.swo
+# Temporary files
 *~
-.vscode/
-.idea/
+*.tmp
+*.bak
+*.swp
+*.log
 
-# Build artifacts
-build/
-dist/
-*.o
-*.exe
