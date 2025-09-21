@@ -1,0 +1,102 @@
+name: ControlSys Modules CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install Icarus Verilog and GTKWave
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y iverilog gtkwave
+        
+    - name: Verify installation
+      run: |
+        iverilog -V
+        echo "Icarus Verilog installed successfully"
+        
+    - name: List available modules
+      run: make list-modules
+      
+    - name: Run comprehensive test suite
+      run: ./run_tests.sh
+      
+    - name: Generate test report
+      if: always()
+      run: |
+        echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Test execution completed. Check logs for detailed results." >> $GITHUB_STEP_SUMMARY
+        
+    - name: Upload test artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          tests/waveforms/*.vcd
+          tests/reports/*
+          /tmp/test_*.log
+        retention-days: 30
+        
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install Verilator for linting
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y verilator
+        
+    - name: Lint Verilog files
+      run: |
+        echo "Linting Verilog modules..."
+        for file in *.v; do
+          echo "Linting $file..."
+          verilator --lint-only --Wall "$file" || echo "Warning: $file has lint issues"
+        done
+        
+  documentation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check documentation
+      run: |
+        echo "## Documentation Check" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Check README
+        if [ -f README.md ]; then
+          echo "✅ README.md exists" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ README.md missing" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Check if modules are documented
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Module Documentation Status" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        for file in *.v; do
+          if grep -q "Description:" "$file"; then
+            echo "✅ $file - documented" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ $file - needs documentation" >> $GITHUB_STEP_SUMMARY
+          fi
+        done
