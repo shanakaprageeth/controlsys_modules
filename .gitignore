@@ -1,0 +1,49 @@
+# Simulation and test artifacts
+test_*
+*.vcd
+*.vvp
+*.out
+
+# ModelSim/QuestaSim artifacts  
+work/
+*.wlf
+transcript
+*.cr.mti
+
+# FPGA vendor tool artifacts
+*.qpf
+*.qsf
+*.qws
+*.rpt
+*.summary
+*.pin
+*.fit
+*.map
+*.sta
+*.asm
+*.done
+*.jdi
+*.pof
+*.sof
+db/
+incremental_db/
+output_files/
+
+# Xilinx artifacts
+*.xpr
+*.bit
+*.bin
+*.mcs
+*.prm
+*.ltx
+vivado*.log
+vivado*.jou
+.Xil/
+project*/
+
+# Temporary files
+*~
+*.tmp
+*.bak
+*.swp
+*.log
