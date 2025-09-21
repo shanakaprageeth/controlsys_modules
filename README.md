@@ -39,7 +39,36 @@ Synthesis the design and load it to your FPGA.
 
 ## Running the tests
 
-You can run tests either using simulations or interfacing the FPGA to a ARM mbed microcontroller through SPI.
+The repository includes a comprehensive testing framework using open-source tools:
+
+```bash
+# Install testing tools (Ubuntu/Debian)
+sudo apt-get install -y iverilog gtkwave
+
+# Run all tests
+make test
+
+# Run specific module tests
+make test_bldc_commutation
+make test_pwm_out
+make test_filter_basic_fixed
+
+# View waveforms
+make wave_bldc_commutation
+
+# Get help
+make help
+```
+
+For detailed testing documentation, see [TESTING.md](TESTING.md).
+
+### Testing Features
+
+- **Automated unit tests** for all modules using Icarus Verilog
+- **Waveform generation** with GTKWave integration
+- **Continuous Integration** with GitHub Actions
+- **Comprehensive test coverage** including edge cases and error conditions
+- **Test reporting** with pass/fail status and detailed logs
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

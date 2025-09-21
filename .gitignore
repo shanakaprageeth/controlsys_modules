@@ -1,3 +1,4 @@
+
 # Simulation and test artifacts
 test_*
 *.vcd
@@ -47,3 +48,4 @@ project*/
 *.bak
 *.swp
 *.log
+
