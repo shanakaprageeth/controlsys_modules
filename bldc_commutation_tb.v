@@ -50,8 +50,7 @@ initial begin
     // Test case 1: Check initial commutation output
     #20 hall_1=1'b1; hall_2=1'b1; hall_3=1'b1;
     #25 if (hall_error !== 1'b1) $display("Test case 1 failed");
-
-    // Add more test cases as needed
+    else $display("PASS bldc_commutation_tb (invalid hall 111 flagged)");
 
     #30 $finish;
 end

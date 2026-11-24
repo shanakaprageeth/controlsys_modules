@@ -10,11 +10,17 @@
 // Target Devices: 
 // Tool versions: 
 // Description: 
-//	a module that act as a first order filter for float values
+//	second-order IIR Butterworth low-pass for IEEE-754 single-precision values
+//	y = X_K*x + X_1_K*x1 + X_2_K*x2 + Y_1_K*y1 - Y_2_K*y2
 // Dependencies: 
-//  DSP floating point module
-//	sample time :1MHz
-// 	Filter Constant: 1kHz
+//  Altera floating point megafunctions float_multi and float_add_sub
+//	The state updates once every 10001 clk cycles (counter 0..10000), so the
+//	filter sample rate is f_update = f_clk / 10001, not f_clk.
+// 	The constants below are a Butterworth design with fc = 0.020 * f_update
+//	(fitted with tools/iir_coeffs.py --audit). They are rounded to 4
+//	significant digits, which gives a DC gain of 1.0273 (KNOWN_ISSUES.md KI-2).
+//	The original header said "first order, sample 1MHz, fc 1kHz"; that does
+//	not match the constants or the update counter.
 //	
 // Revision:  1.0
 // Revision 0.01 - File Created

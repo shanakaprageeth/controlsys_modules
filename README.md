@@ -43,3 +43,21 @@ You can run tests either using simulations or interfacing the FPGA to a ARM mbed
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Tests
+
+```bash
+bash tests/run_tests.sh                       # Icarus Verilog self-checking testbenches
+python -m pytest tests                        # offline checks of the IIR constants (numpy, scipy)
+python tools/iir_coeffs.py --audit            # decode and audit the Butterworth constants
+python tools/iir_coeffs.py --fc 1000 --fs 50000   # float32 bit patterns for a new design
+```
+
+| Testbench | Module | Checks |
+|---|---|---|
+| `tests/tb_pwm_out.v` | `pwm_out` | duty 0, 1, 64, 128, 255: exact high count per period |
+| `tests/tb_quadrature_encoder.v` | `quadrature_encoder` | x4 decoding forward (+40) and reverse (-20), direction flag |
+| `tests/tb_filter_basic.v` | `filter_basic` | reproduces known defect KI-1 |
+| `bldc_commutation_tb.v` | `BLDC_commutation` | invalid hall state 111 raises `hall_error` |
+
+See [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for defects found in the 2026 audit.
